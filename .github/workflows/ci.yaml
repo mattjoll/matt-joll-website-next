@@ -29,6 +29,9 @@ jobs:
         run: yarn build
 
   deploy:
+    # Only deploy on push to the main branch
+    if: github.event_name == 'push' && github.ref == 'refs/heads/set-up-github-actions'
+
     name: Deploy to Main
     runs-on: ubuntu-latest
     needs: build
