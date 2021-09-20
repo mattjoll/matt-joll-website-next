@@ -15,7 +15,7 @@ const BlogPostPreview: FunctionComponent<BlogPostPreviewProps> = (props) => {
           {new Date(props.blogPost.createdDate).toLocaleDateString()}
         </div>
         <div className="flex-grow">{props.blogPost.description}</div>
-        <Link href={`/blog/post/${props.blogPost.slug}`}>
+        <Link href={`/blog/${props.blogPost.slug}`}>
           <a className="cursor-pointer self-end mt-2 text-green-600">
             Read more
           </a>
