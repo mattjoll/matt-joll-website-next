@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  # On push to main, as well as PRs into main
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node
+        uses: actions/setup-node@v2
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build App
+        run: yarn build
+
+  deploy:
+    # Only deploy on push to the main branch
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    name: Deploy to Main
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy app to Google Cloud App Engine
+        uses: google-github-actions/deploy-appengine@main
+        with:
+          credentials: ${{ secrets.GCP_SA_KEY }}
