@@ -4,6 +4,7 @@ on:
   # On push to main, as well as PRs into main
   push:
     branches:
+      - 'view-blog-posts'
       - 'main'
   pull_request:
     branches:
@@ -29,7 +30,7 @@ jobs:
 
   deploy:
     # Only deploy on push to the main branch
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     name: Deploy to Main
     runs-on: ubuntu-latest
