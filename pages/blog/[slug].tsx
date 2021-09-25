@@ -21,7 +21,7 @@ const BlogPost: NextPage = () => {
       return;
     }
 
-    const apiUrl = `${'http://localhost:3001'}/blog/${slug}`;
+    const apiUrl = `api/blog/${slug}`;
 
     fetch(apiUrl)
       .then((res) => res.json())
