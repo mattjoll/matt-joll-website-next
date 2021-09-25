@@ -7,11 +7,11 @@ const Footer: FunctionComponent = () => {
       <div>
         <a
           className="px-3 hover:text-green-600"
-          href="https://www.reactjs.org"
+          href="https://nextjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          React
+          Next.js
         </a>
         <a
           className="px-3 hover:text-green-600"
