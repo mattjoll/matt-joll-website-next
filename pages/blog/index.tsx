@@ -1,13 +1,13 @@
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import { IBlogPost } from '../interfaces/i-blog-post';
-import BlogPostPreview from '../components/BlogPostPreview';
+import { IBlogPost } from '../../interfaces/i-blog-post';
+import BlogPostPreview from '../../components/BlogPostPreview';
 
 const Blog: NextPage = () => {
   const [blogPosts, setBlogPosts] = useState<IBlogPost[]>([]);
 
   useEffect(() => {
-    const apiUrl = `api/blog/posts`;
+    const apiUrl = `${process.env.SERVER_URL}/api/blog/posts`;
 
     fetch(apiUrl, { method: 'GET' })
       .then((res) => res.json())
