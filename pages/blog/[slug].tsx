@@ -29,7 +29,7 @@ export default BlogPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogPosts: IBlogPost[] = await fetch(
-    `${process.env.SERVER_URL}/api/blog/posts`
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/posts`
   )
     .then((res) => res.json())
     .then((res) => res.blogPosts);
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   params,
 }) => {
   const blogPost: IBlogPost = await fetch(
-    `${process.env.SERVER_URL}/api/blog/${params?.slug}`
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/${params?.slug}`
   ).then((res) => res.json());
 
   return {

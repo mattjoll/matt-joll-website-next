@@ -7,7 +7,7 @@ const Blog: NextPage = () => {
   const [blogPosts, setBlogPosts] = useState<IBlogPost[]>([]);
 
   useEffect(() => {
-    const apiUrl = `${process.env.SERVER_URL}/api/blog/posts`;
+    const apiUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/posts`;
 
     fetch(apiUrl, { method: 'GET' })
       .then((res) => res.json())
