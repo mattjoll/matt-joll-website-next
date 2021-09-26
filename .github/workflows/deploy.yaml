@@ -1,7 +1,7 @@
 name: Deploy
 
 on:
-  # On push to main, as well as PRs into main
+  # On push to main
   push:
     branches:
       - 'main'
