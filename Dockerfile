@@ -11,6 +11,7 @@ ENV HOST 0.0.0.0
 COPY package.json ./
 COPY yarn.lock ./
 
+RUN yarn global install typescript
 RUN yarn install --frozen-lockfile --prod
 
 COPY . .
