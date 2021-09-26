@@ -1,20 +1,13 @@
-import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { GetStaticProps, NextPage } from 'next';
 import { IBlogPost } from '../../interfaces/i-blog-post';
 import BlogPostPreview from '../../components/BlogPostPreview';
 
-const Blog: NextPage = () => {
-  const [blogPosts, setBlogPosts] = useState<IBlogPost[]>([]);
+type BlogProps = {
+  blogPosts: IBlogPost[];
+};
 
-  useEffect(() => {
-    const apiUrl = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/posts`;
-
-    fetch(apiUrl, { method: 'GET' })
-      .then((res) => res.json())
-      .then((res) => setBlogPosts(res.blogPosts));
-  }, []);
-
-  const blogPostElements = blogPosts.map((blogPost: IBlogPost) => (
+const Blog: NextPage<BlogProps> = (props) => {
+  const blogPostElements = props.blogPosts.map((blogPost: IBlogPost) => (
     <BlogPostPreview blogPost={blogPost} key={`${blogPost.id}-preview`} />
   ));
 
@@ -29,3 +22,14 @@ const Blog: NextPage = () => {
 };
 
 export default Blog;
+
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/posts`
+  ).then((res) => res.json());
+
+  return {
+    props: { blogPosts: response.blogPosts },
+    revalidate: 60,
+  };
+};
