@@ -4,7 +4,6 @@ on:
   # On push to main, as well as PRs into main
   push:
     branches:
-      - 'deploy-site-to-gcp'
       - 'main'
 
 jobs:
