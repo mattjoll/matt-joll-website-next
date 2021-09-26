@@ -9,6 +9,10 @@ RUN yarn install --frozen-lockfile
 FROM node:16 AS builder
 WORKDIR /usr/src/app
 
+ARG server_url
+
+ENV NEXT_PUBLIC_SERVER_URL=$server_url
+
 COPY . .
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 
@@ -18,7 +22,6 @@ RUN yarn build && yarn install --production --ignore-scripts
 FROM node:16 as runner
 WORKDIR /usr/src/app
 
-ENV NEXT_PUBLIC_SERVER_URL $server_url
 ENV NODE_ENV production
 ENV PORT 3000
 
