@@ -11,9 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <NavBar />
       </div>
 
-      <div className="max-w-4xl mx-auto my-6 w-11/12 md:w-3/4">
+      <main className="max-w-4xl mx-auto my-6 w-11/12 md:w-3/4">
         <Component {...pageProps} />
-      </div>
+      </main>
 
       <div className="mt-auto">
         <Footer />

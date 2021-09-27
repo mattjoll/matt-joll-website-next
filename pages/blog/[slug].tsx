@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { IBlogPost } from '../../interfaces/i-blog-post';
 import ReactMarkdown from 'react-markdown';
+import PageHead from '../../components/PageHead';
 
 type BlogPostProps = {
   blogPost: IBlogPost;
@@ -9,6 +10,11 @@ type BlogPostProps = {
 const BlogPost: NextPage<BlogPostProps> = (props) => {
   return (
     <article>
+      <PageHead
+        title={props.blogPost.title}
+        type="article"
+        pageUrl={`/blog/${props.blogPost.slug}`}
+      />
       <header>
         <h1>{props.blogPost.title}</h1>
         <div className="mt-2 mb-5 text-green-600">
