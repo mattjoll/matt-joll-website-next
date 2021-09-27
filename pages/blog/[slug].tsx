@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { IBlogPost } from '../../interfaces/i-blog-post';
+import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 
 type BlogPostProps = {
@@ -9,6 +10,21 @@ type BlogPostProps = {
 const BlogPost: NextPage<BlogPostProps> = (props) => {
   return (
     <article>
+      <Head>
+        <title>{props.blogPost.title} - Matt Joll</title>
+        <meta
+          name="description"
+          content="Matt Joll is a Software Engineer from New Zealand with a passion for the web."
+        />
+        <meta name="og:title" content="Matt Joll" />
+        <meta
+          name="og:description"
+          content="Matt Joll is a Software Engineer from New Zealand with a passion for the web."
+        />
+        <meta name="og:url" content="https://mattjoll.nz" />
+        <meta name="og:type" content="website" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <header>
         <h1>{props.blogPost.title}</h1>
         <div className="mt-2 mb-5 text-green-600">
