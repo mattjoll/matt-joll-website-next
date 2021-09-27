@@ -25,7 +25,7 @@ const Blog: NextPage<BlogProps> = (props) => {
           name="og:description"
           content="Matt Joll is a Software Engineer from New Zealand with a passion for the web."
         />
-        <meta name="og:url" content="https://mattjoll.nz" />
+        <meta name="og:url" content="https://mattjoll.nz/blog" />
         <meta name="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

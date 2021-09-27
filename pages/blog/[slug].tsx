@@ -21,8 +21,11 @@ const BlogPost: NextPage<BlogPostProps> = (props) => {
           name="og:description"
           content="Matt Joll is a Software Engineer from New Zealand with a passion for the web."
         />
-        <meta name="og:url" content="https://mattjoll.nz" />
-        <meta name="og:type" content="website" />
+        <meta
+          name="og:url"
+          content={`https://mattjoll.nz/blog/${props.blogPost.slug}`}
+        />
+        <meta name="og:type" content="article" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
