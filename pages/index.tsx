@@ -5,21 +5,23 @@ const Home: NextPage = () => {
   return (
     <div>
       <PageHead />
-      <section>
-        <div>Kia ora, I{"'"}m Matt</div>
-        <div>Software engineer and lover of the web</div>
+      <section className="mb-10">
+        <h1>
+          Kia ora, I{"'"}m <span className="text-green-400">Matt</span>
+        </h1>
+        <h2>Software engineer and lover of the web</h2>
       </section>
 
-      <section>
-        <div>About me</div>
-        <div>This is a description of me. Something something developer.</div>
-        <div>Now for some more content. Yay for content.</div>
+      <section className="my-10">
+        <h2>About me</h2>
+        <p>This is a description of me. Something something developer.</p>
+        <p>Now for some more content. Yay for content.</p>
       </section>
 
-      <section>
-        <div>Skills and tricks</div>
-        <div>These are my skills. I have skills in:</div>
-        <div>Angular, React, Node, C#/.NET, SQL</div>
+      <section className="my-10">
+        <h2>Skills and tricks</h2>
+        <p>These are my skills. I have skills in:</p>
+        <p>Angular, React, Node, C#/.NET, SQL</p>
       </section>
     </div>
   );

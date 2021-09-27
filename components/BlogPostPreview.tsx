@@ -8,7 +8,7 @@ type BlogPostPreviewProps = {
 
 const BlogPostPreview: FunctionComponent<BlogPostPreviewProps> = (props) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-lg">
+    <div className="p-4 rounded-lg shadow-lg">
       <div className="h-full flex flex-col">
         <h2>{props.blogPost.title}</h2>
         <div className="font-light my-2 text-sm">
