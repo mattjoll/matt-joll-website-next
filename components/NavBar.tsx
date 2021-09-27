@@ -4,9 +4,10 @@ import NavButton from './NavButton';
 
 const NavBar: FunctionComponent = () => {
   return (
-    <nav className="bg-white flex items-center justify-between px-10 py-4 shadow text-xl">
+    <nav className="bg-gray-900 flex items-center justify-between px-10 py-4 shadow text-xl">
       <div>Matt Joll</div>
       <div className="flex items-center">
+        <NavButton href="/" label="Home" />
         <NavButton href="/blog" label="Blog" />
         <a
           className="max-h-8 ml-8"
