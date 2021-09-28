@@ -8,19 +8,6 @@ const NavBar: FunctionComponent = () => {
       <div className="flex items-center">
         <NavButton href="/" label="Home" />
         <NavButton href="/blog" label="Blog" />
-        <a
-          className="max-h-8 ml-8"
-          href="https://github.com/mattjoll"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            alt="GitHub"
-            height={32}
-            src="/images/GitHub-Mark-32px.png"
-            width={32}
-          />
-        </a>
       </div>
     </nav>
   );
