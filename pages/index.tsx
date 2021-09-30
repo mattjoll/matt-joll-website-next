@@ -40,8 +40,8 @@ const Home: NextPage = () => {
             </p>
             <p>
               When I&apos;m not coding, you can find me writing music, cooking,
-              or playing video games. Theres nothing quite like listening to
-              rock music and playing Final Fantasy while waiting for bread to
+              or playing video games. There&apos;s nothing quite like listening
+              to rock music and playing Final Fantasy while waiting for bread to
               bake.
             </p>
           </section>
