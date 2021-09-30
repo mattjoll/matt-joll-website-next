@@ -5,7 +5,7 @@ const Footer: FunctionComponent = () => {
   return (
     <footer className="py-4 flex justify-center">
       <span>
-        &#169; Matt Joll 2021 |{' '}
+        &#169; 2021 Matt Joll |{' '}
         <DevIcon
           icon="devicon-twitter-original"
           link="https://twitter.com/mattjoll"
