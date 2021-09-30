@@ -28,6 +28,10 @@ const PageHead: FunctionComponent<PageHeadProps> = (props) => {
       />
       <meta name="og:type" content={props.type || 'website'} />
       <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+      />
     </Head>
   );
 };
