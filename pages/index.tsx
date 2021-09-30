@@ -19,7 +19,7 @@ const Home: NextPage = () => {
       <section className="my-20">
         <h2>About me</h2>
         <article className="flex flex-col items-center lg:flex-row">
-          <div>
+          <section>
             <p>
               As a developer, I want to help people. From teaching someone
               who&apos;s never coded before to helping a large team write
@@ -43,8 +43,8 @@ const Home: NextPage = () => {
               rock music and playing Final Fantasy while waiting for bread to
               bake.
             </p>
-          </div>
-          <div className="block flex-shrink-0 lg:ml-6">
+          </section>
+          <figure className="block flex-shrink-0 lg:ml-6">
             <Image
               alt="Matt Joll"
               className="rounded-full"
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
               height={300}
               width={300}
             />
-          </div>
+          </figure>
         </article>
       </section>
 
