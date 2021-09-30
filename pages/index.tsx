@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import DevIcon from '../components/DevIcon';
 import PageHead from '../components/PageHead';
 
 const Home: NextPage = () => {
@@ -57,8 +58,28 @@ const Home: NextPage = () => {
 
       <section className="my-20">
         <h2>Skills and tricks</h2>
-        <p>These are my skills. I have skills in:</p>
-        <p>Angular, React, Node, C#/.NET, SQL</p>
+        <h3>Languages</h3>
+        <p>
+          <DevIcon icon="devicon-html5-plain" />
+          <DevIcon icon="devicon-css3-plain" />
+          <DevIcon icon="devicon-javascript-plain" />
+          <DevIcon icon="devicon-typescript-plain" />
+          <DevIcon icon="devicon-csharp-plain" />
+        </p>
+        <h3>Frameworks and libraries</h3>
+        <p>
+          <DevIcon icon="devicon-angularjs-plain" />
+          <DevIcon icon="devicon-react-original" />
+          <DevIcon icon="devicon-tailwindcss-plain" />
+          <DevIcon icon="devicon-nodejs-plain" />
+          <DevIcon icon="devicon-dotnetcore-plain" />
+        </p>
+        <h3>Other cool things</h3>
+        <p>
+          <DevIcon icon="devicon-vscode-plain" />
+          <DevIcon icon="devicon-docker-plain" />
+          <DevIcon icon="devicon-googlecloud-plain" />
+        </p>
       </section>
     </div>
   );
