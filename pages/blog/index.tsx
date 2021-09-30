@@ -13,7 +13,7 @@ const Blog: NextPage<BlogProps> = (props) => {
   ));
 
   return (
-    <div>
+    <div className="mt-20">
       <PageHead title="Blog" pageUrl="/blog" />
       <h1>Blog</h1>
       <div className="grid auto-rows-auto gap-4 grid-cols-1 lg:grid-cols-2 mt-5">

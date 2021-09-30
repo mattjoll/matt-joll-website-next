@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import AboutSection from '../components/AboutSection';
 import DevIcon from '../components/DevIcon';
 import PageHead from '../components/PageHead';
 
@@ -7,16 +8,16 @@ const Home: NextPage = () => {
   return (
     <div>
       <PageHead />
-      <section className="mb-20">
+      <AboutSection>
         <h1 className="max-w-sm">
           Kia ora, my name is <span className="text-green-400">Matt</span>
         </h1>
         <h3>
           I&apos;m a software engineer and lover of the web from New Zealand.
         </h3>
-      </section>
+      </AboutSection>
 
-      <section className="my-20">
+      <AboutSection>
         <h2>About me</h2>
         <article className="flex flex-col items-center lg:flex-row">
           <section>
@@ -54,9 +55,9 @@ const Home: NextPage = () => {
             />
           </figure>
         </article>
-      </section>
+      </AboutSection>
 
-      <section className="my-20">
+      <AboutSection>
         <h2>Skills and tricks</h2>
         <h3>Languages</h3>
         <p className="flex flex-wrap">
@@ -108,7 +109,7 @@ const Home: NextPage = () => {
             link="https://cloud.google.com"
           />
         </p>
-      </section>
+      </AboutSection>
     </div>
   );
 };
