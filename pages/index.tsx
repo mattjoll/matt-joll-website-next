@@ -72,6 +72,7 @@ const Home: NextPage = () => {
           <DevIcon icon="devicon-react-original" />
           <DevIcon icon="devicon-tailwindcss-plain" />
           <DevIcon icon="devicon-nodejs-plain" />
+          <DevIcon icon="devicon-jest-plain" />
           <DevIcon icon="devicon-dotnetcore-plain" />
         </p>
         <h3>Other cool things</h3>
