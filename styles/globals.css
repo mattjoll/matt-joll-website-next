@@ -30,7 +30,7 @@
   }
 
   p {
-    @apply md:text-xl;
+    @apply sm:text-xl;
     @apply mb-5;
   }
 }
