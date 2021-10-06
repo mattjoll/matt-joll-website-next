@@ -2,6 +2,6 @@ export interface IPortfolioItem {
   description: string;
   id: string;
   imageUrl: string;
-  pageUrl: string;
+  repoUrl: string;
   title: string;
 }

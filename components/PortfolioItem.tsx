@@ -15,7 +15,7 @@ const PortfolioItem: FunctionComponent<PortfolioItemProps> = (props) => {
         <p>{props.portfolioItem.description}</p>
         <DevIcon
           icon="devicon-github-original"
-          link={props.portfolioItem.pageUrl}
+          link={props.portfolioItem.repoUrl}
         />
       </div>
       <Image
