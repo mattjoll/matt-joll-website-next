@@ -10,7 +10,10 @@ type PortfolioProps = {
 const Portfolio: NextPage<PortfolioProps> = (props) => {
   const portfolioItemElements = props.portfolioItems.map(
     (portfolioItem: IPortfolioItem) => (
-      <PortfolioItem key={`${portfolioItem.id}`} />
+      <PortfolioItem
+        key={`${portfolioItem.id}`}
+        portfolioItem={portfolioItem}
+      />
     )
   );
 
