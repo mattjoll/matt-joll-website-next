@@ -20,7 +20,7 @@ const PortfolioItem: FunctionComponent<PortfolioItemProps> = (props) => {
       </div>
       <Image
         alt="Portfolio Item"
-        src="/images/Matt-head.jpg"
+        src={props.portfolioItem.imageUrl}
         height={300}
         width={300}
       />
