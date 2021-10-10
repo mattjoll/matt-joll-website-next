@@ -9,7 +9,7 @@ type PortfolioItemProps = {
 
 const PortfolioItem: FunctionComponent<PortfolioItemProps> = (props) => {
   return (
-    <article className="flex flex-col justify-between md:flex-row">
+    <article className="flex flex-col justify-between lg:flex-row">
       <div>
         <h2>{props.portfolioItem.title}</h2>
         <p>{props.portfolioItem.description}</p>
@@ -18,12 +18,14 @@ const PortfolioItem: FunctionComponent<PortfolioItemProps> = (props) => {
           link={props.portfolioItem.repoUrl}
         />
       </div>
-      <Image
-        alt="Portfolio Item"
-        src={props.portfolioItem.imageUrl}
-        height={300}
-        width={300}
-      />
+      <figure className="flex-shrink-0 mt-2 self-center lg:ml-6 lg:mt-0">
+        <Image
+          alt="Portfolio Item"
+          src={props.portfolioItem.imageUrl}
+          height={250}
+          width={250}
+        />
+      </figure>
     </article>
   );
 };
