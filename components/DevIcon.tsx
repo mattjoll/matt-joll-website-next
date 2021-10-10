@@ -9,7 +9,7 @@ type DevIconProps = {
 const DevIcon: FunctionComponent<DevIconProps> = (props) => {
   return (
     <a
-      className="cursor-pointer mx-2"
+      className="cursor-pointer mx-2 hover:text-green-400"
       href={props.link}
       target="_blank"
       rel="noopener noreferrer"

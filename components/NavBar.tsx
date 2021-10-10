@@ -8,6 +8,7 @@ const NavBar: FunctionComponent = () => {
       <div className="flex items-center">
         <NavButton href="/" label="Home" />
         <NavButton href="/blog" label="Blog" />
+        <NavButton href="/portfolio" label="Portfolio" />
       </div>
     </nav>
   );
