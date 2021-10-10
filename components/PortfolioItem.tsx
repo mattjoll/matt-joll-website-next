@@ -9,14 +9,18 @@ type PortfolioItemProps = {
 
 const PortfolioItem: FunctionComponent<PortfolioItemProps> = (props) => {
   return (
-    <article className="flex flex-col justify-between lg:flex-row">
-      <div>
+    <article className="flex flex-col justify-between p-4 rounded-lg shadow-lg lg:flex-row">
+      <div className="flex flex-col">
         <h2>{props.portfolioItem.title}</h2>
         <p>{props.portfolioItem.description}</p>
-        <DevIcon
-          icon="devicon-github-original"
-          link={props.portfolioItem.repoUrl}
-        />
+        <a
+          className="cursor-pointer self-end mt-2 text-green-600"
+          href={props.portfolioItem.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View source
+        </a>
       </div>
       <figure className="flex-shrink-0 mt-2 self-center lg:ml-6 lg:mt-0">
         <Image
