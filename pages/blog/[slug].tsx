@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import { IBlogPost } from '../../interfaces/i-blog-post';
 import ReactMarkdown from 'react-markdown';
 import PageHead from '../../components/PageHead';
@@ -33,20 +33,7 @@ const BlogPost: NextPage<BlogPostProps> = (props) => {
 
 export default BlogPost;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const blogPosts: IBlogPost[] = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/posts`
-  )
-    .then((res) => res.json())
-    .then((res) => res.blogPosts);
-
-  return {
-    paths: blogPosts.map(({ slug }) => `/blog/${slug}`),
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
+export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({
   params,
 }) => {
   const blogPost: IBlogPost = await fetch(
