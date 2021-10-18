@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import PageHead from '../../components/PageHead';
 import PortfolioItem from '../../components/PortfolioItem';
 import { IPortfolioItem } from '../../interfaces/i-portfolio-item';
@@ -26,15 +26,15 @@ const Portfolio: NextPage<PortfolioProps> = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<PortfolioProps> = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/portfolio`
-  ).then((res) => res.json());
+export const getServerSideProps: GetServerSideProps<PortfolioProps> =
+  async () => {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/portfolio`
+    ).then((res) => res.json());
 
-  return {
-    props: { portfolioItems: response.portfolioItems },
-    revalidate: 60,
+    return {
+      props: { portfolioItems: response.portfolioItems },
+    };
   };
-};
 
 export default Portfolio;
