@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import Image from 'next/image';
 import DevIcon from './DevIcon';
 import { IPortfolioItem } from '../interfaces/i-portfolio-item';
+import LinkButton from './LinkButton';
 
 type PortfolioItemProps = {
   portfolioItem: IPortfolioItem;
@@ -24,22 +25,8 @@ const PortfolioItem: FunctionComponent<PortfolioItemProps> = ({
         <h2>{portfolioItem.title}</h2>
         <p>{portfolioItem.description}</p>
         <div className="flex mb-6 ml-auto gap-x-4">
-          <a
-            className={`${liveLinkClasses}`}
-            href={portfolioItem.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View live app
-          </a>
-          <a
-            className={`${sourceLinkClasses}`}
-            href={portfolioItem.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View source
-          </a>
+          <LinkButton url={portfolioItem.liveUrl}>View live example</LinkButton>
+          <LinkButton url={portfolioItem.repoUrl}>View source</LinkButton>
         </div>
       </div>
       <figure className="flex-shrink-0 mt-2 self-center lg:ml-6 lg:mt-0">
