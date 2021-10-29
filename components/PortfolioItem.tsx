@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
-import DevIcon from './DevIcon';
 import { IPortfolioItem } from '../interfaces/i-portfolio-item';
 import LinkButton from './LinkButton';
 
@@ -11,14 +10,6 @@ type PortfolioItemProps = {
 const PortfolioItem: FunctionComponent<PortfolioItemProps> = ({
   portfolioItem,
 }: PortfolioItemProps) => {
-  const liveLinkClasses = !portfolioItem.liveUrl
-    ? 'cursor-not-allowed text-gray-400'
-    : 'cursor-pointer text-green-600';
-
-  const sourceLinkClasses = !portfolioItem.repoUrl
-    ? 'cursor-not-allowed text-gray-400'
-    : 'cursor-pointer text-green-600';
-
   return (
     <article className="flex flex-col justify-between p-4 rounded-lg shadow-lg lg:flex-row">
       <div className="flex flex-col">
