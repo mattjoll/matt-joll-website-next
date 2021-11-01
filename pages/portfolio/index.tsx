@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import PageHead from '../../components/PageHead';
 import PortfolioItem from '../../components/PortfolioItem';
 import { IPortfolioItem } from '../../interfaces/i-portfolio-item';
@@ -8,14 +8,14 @@ type PortfolioProps = {
   portfolioItems: any;
 };
 
-export const getServerSideProps: GetServerSideProps<PortfolioProps> =
-  async () => {
-    const portfolioItems = await PortfolioService.getPortfolioItems();
+export const getStaticProps: GetStaticProps<PortfolioProps> = async () => {
+  const portfolioItems = await PortfolioService.getPortfolioItems();
 
-    return {
-      props: { portfolioItems: portfolioItems },
-    };
+  return {
+    props: { portfolioItems: portfolioItems },
+    revalidate: 1800, // 30 minutes
   };
+};
 
 const Portfolio: NextPage<PortfolioProps> = (props) => {
   const portfolioItemElements = props.portfolioItems.map(
