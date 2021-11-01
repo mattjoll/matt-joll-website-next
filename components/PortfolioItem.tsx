@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import Image from 'next/image';
 import { IPortfolioItem } from '../interfaces/i-portfolio-item';
 import LinkButton from './LinkButton';
+import ContentfulImage from './ContentfulImage';
 
 type PortfolioItemProps = {
   portfolioItem: IPortfolioItem;
@@ -21,7 +22,7 @@ const PortfolioItem: FunctionComponent<PortfolioItemProps> = ({
         </div>
       </div>
       <figure className="flex-shrink-0 mt-2 self-center lg:ml-6 lg:mt-0">
-        <Image
+        <ContentfulImage
           alt="Portfolio Item"
           src={portfolioItem.imageUrl}
           height={200}
