@@ -2,10 +2,20 @@ import { GetServerSideProps, NextPage } from 'next';
 import PageHead from '../../components/PageHead';
 import PortfolioItem from '../../components/PortfolioItem';
 import { IPortfolioItem } from '../../interfaces/i-portfolio-item';
+import { PortfolioService } from '../../services/portfolio.service';
 
 type PortfolioProps = {
   portfolioItems: any;
 };
+
+export const getServerSideProps: GetServerSideProps<PortfolioProps> =
+  async () => {
+    const portfolioItems = await PortfolioService.getPortfolioItems();
+
+    return {
+      props: { portfolioItems: portfolioItems },
+    };
+  };
 
 const Portfolio: NextPage<PortfolioProps> = (props) => {
   const portfolioItemElements = props.portfolioItems.map(
@@ -25,16 +35,5 @@ const Portfolio: NextPage<PortfolioProps> = (props) => {
     </div>
   );
 };
-
-export const getServerSideProps: GetServerSideProps<PortfolioProps> =
-  async () => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/portfolio`
-    ).then((res) => res.json());
-
-    return {
-      props: { portfolioItems: response.portfolioItems },
-    };
-  };
 
 export default Portfolio;
