@@ -30,8 +30,10 @@ export class ContentfulUtils {
    * @returns The transformed blog post
    */
   public static convertContentEntryToBlogPost(entry: Entry<any>): IBlogPost {
+    const formattedDate = new Date(entry.sys.createdAt).toLocaleDateString();
+
     return {
-      createdDate: entry.sys.createdAt,
+      createdDate: formattedDate,
       content: entry.fields.content,
       description: entry.fields.shortDescription,
       id: entry.sys.id,
