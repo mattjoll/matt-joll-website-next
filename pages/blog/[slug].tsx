@@ -2,6 +2,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import { IBlogPost } from '../../interfaces/i-blog-post';
 import ReactMarkdown from 'react-markdown';
 import PageHead from '../../components/PageHead';
+import { BlogService } from '../../services/blog.service';
 
 type BlogPostProps = {
   blogPost: IBlogPost;
@@ -36,9 +37,8 @@ export default BlogPost;
 export const getServerSideProps: GetServerSideProps<BlogPostProps> = async ({
   params,
 }) => {
-  const blogPost: IBlogPost = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/${params?.slug}`
-  ).then((res) => res.json());
+  const slug = params?.slug as string;
+  const blogPost = await BlogService.getBlogPostBySlug(slug);
 
   return {
     props: { blogPost },
