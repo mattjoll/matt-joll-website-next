@@ -1,10 +1,20 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { IBlogPost } from '../../interfaces/i-blog-post';
 import BlogPostPreview from '../../components/BlogPostPreview';
 import PageHead from '../../components/PageHead';
+import { BlogService } from '../../services/blog.service';
 
 type BlogProps = {
   blogPosts: IBlogPost[];
+};
+
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
+  const blogPosts = await BlogService.getBlogPosts();
+
+  return {
+    props: { blogPosts: blogPosts },
+    revalidate: 1800, // 30 minutes
+  };
 };
 
 const Blog: NextPage<BlogProps> = (props) => {
@@ -24,13 +34,3 @@ const Blog: NextPage<BlogProps> = (props) => {
 };
 
 export default Blog;
-
-export const getServerSideProps: GetServerSideProps<BlogProps> = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/posts`
-  ).then((res) => res.json());
-
-  return {
-    props: { blogPosts: response.blogPosts },
-  };
-};

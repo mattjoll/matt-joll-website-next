@@ -12,7 +12,7 @@ const BlogPostPreview: FunctionComponent<BlogPostPreviewProps> = (props) => {
       <div className="h-full flex flex-col">
         <h2>{props.blogPost.title}</h2>
         <div className="font-light my-2 text-sm">
-          {new Date(props.blogPost.createdDate).toLocaleDateString()}
+          {props.blogPost.createdDate}
         </div>
         <div className="flex-grow">{props.blogPost.description}</div>
         <Link href={`/blog/${props.blogPost.slug}`}>
