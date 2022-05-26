@@ -1,6 +1,8 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 
-const AboutSection: FunctionComponent = ({ children }) => {
+const AboutSection: FunctionComponent<PropsWithChildren<{}>> = ({
+  children,
+}) => {
   return <section className="my-20">{children}</section>;
 };
 

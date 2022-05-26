@@ -4,10 +4,10 @@ type LinkButtonProps = {
   url: string;
 };
 
-const LinkButton: FunctionComponent<LinkButtonProps> = ({
+const LinkButton: FunctionComponent<PropsWithChildren<LinkButtonProps>> = ({
   children,
   url,
-}: PropsWithChildren<LinkButtonProps>) => {
+}) => {
   const classes = !url
     ? 'cursor-not-allowed text-gray-400'
     : 'cursor-pointer text-green-600';
